@@ -22,6 +22,8 @@
 <script>
     import db from '@/firebase/init'
     import NewMessage from '@/components/NewMessage'
+    import moment from 'moment'
+
     export default {
         name: 'Chat',
 
@@ -48,7 +50,7 @@
                             id: doc.id,
                             name: doc.data().name,
                             content: doc.data().content,
-                            timestamp: doc.data().timestamp
+                            timestamp: moment(doc.data().timestamp).format('lll')
                         })
                     }
                 })
