@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import firestore from 'firebase/store'
+import 'firebase/firestore'
 
 var config = {
     apiKey: "AIzaSyAegq8omGFF5aZwFGx8VvhnIIOQGsTCG5I",
@@ -10,7 +10,6 @@ var config = {
     messagingSenderId: "850166238486"
   };
 
-const firebaseApp = firebase.initializeApp(config);
-firebaseApp.firestore().settings({ timestampsInSnapshots: true })
+const firebaseApp = firebase.initializeApp(config)
 
 export default firebaseApp.firestore()
